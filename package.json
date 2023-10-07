@@ -1,0 +1,23 @@
+{
+  "name": "looker-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@looker/sdk": "^23.10.0",
+    "@looker/sdk-node": "^23.10.0",
+    "@looker/sdk-rtl": "^21.6.1",
+    "commander": "^11.0.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2"
+  }
+}
