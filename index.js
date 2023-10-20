@@ -158,7 +158,7 @@ program
     createUser(filename)(parseInt(count));
   });
 program
-  .command("user")
+  .command("user_attribute")
   .description("Creates random user attributes in the looker instance")
   .option("-c, --count <count>", "Number of user attributes to create")
   .option(
@@ -255,7 +255,7 @@ assignCommand
   });
 
 actionsCommand
-  .command("group-hierarchy")
+  .command("group_hierarchy")
   .option(
     "-e, --env [env]",
     "Name of the environment (if one was created using the config command). Default value - looker"
