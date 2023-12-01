@@ -254,7 +254,7 @@ assignCommand
     assignMembers(filename)();
   });
 
-actionsCommand
+assignCommand
   .command("group_hierarchy")
   .option(
     "-e, --env [env]",
