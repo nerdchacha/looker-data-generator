@@ -8,6 +8,7 @@ import { create as createRole } from "./entities/role.js";
 import { create as createTheme } from "./entities/theme.js";
 import { create as createUser } from "./entities/user.js";
 import { create as createUserAttribute } from "./entities/userAttribute.js";
+import { create as createSchedule } from "./entities/scheduledPlans.js";
 
 import { assign as assignRoles } from "./actions/role.js";
 import { assign as assignMembers, createHierarchy } from "./actions/group.js";
@@ -76,6 +77,7 @@ program
     }
     createGroup(filename)(parseInt(count));
   });
+
 program
   .command("model_set")
   .description(
@@ -93,6 +95,7 @@ program
     }
     createModelSet(filename)(parseInt(count));
   });
+
 program
   .command("permission_set")
   .description(
@@ -110,6 +113,7 @@ program
     }
     createPermissionSet(filename)(parseInt(count));
   });
+
 program
   .command("role")
   .description(
@@ -127,6 +131,7 @@ program
     }
     createRole(filename)(parseInt(count));
   });
+
 program
   .command("theme")
   .description("Creates random themes in the looker instance")
@@ -142,6 +147,7 @@ program
     }
     createTheme(filename)(parseInt(count));
   });
+
 program
   .command("user")
   .description("Creates random users in the looker instance")
@@ -157,6 +163,7 @@ program
     }
     createUser(filename)(parseInt(count));
   });
+
 program
   .command("user_attribute")
   .description("Creates random user attributes in the looker instance")
@@ -171,6 +178,22 @@ program
       console.log(configError);
     }
     createUserAttribute(filename)(parseInt(count));
+  });
+
+program
+  .command("schedule")
+  .description("Creates random schedules in the looker instance")
+  .option("-c, --count <count>", "Number of schedules to create")
+  .option(
+    "-e, --env [env]",
+    "Name of the environment (if one was created using the config command). Default value - looker"
+  )
+  .action(({ env, count }) => {
+    const filename = env ? `${env}.ini` : DEFAULT_SDK_FILE;
+    if (!filename) {
+      console.log(configError);
+    }
+    createSchedule(filename)(parseInt(count));
   });
 
 program
